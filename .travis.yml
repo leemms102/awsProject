@@ -22,6 +22,8 @@ before_deploy:
   - mkdir -p deploy
   - mv awsApplication.zip deploy/awsApplication.zip
 
+# 빌드는 Travis에서, 배포는 CodeDeploy에서, S3에서 빌드 결과물 저장
+# Travis CI의 빌드 성공 -> S3에 zip 전송 -> ../step2/zip에 압축 풀음
 deploy:
   - provider : s3
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
@@ -40,7 +42,7 @@ deploy:
     key: awsApplication.zip # 빌드 파일을 압축해서 전달
     bundle_type: zip
     application: awsApplication # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
-    deployment_group: awsApplication-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
+    deployment_group: awsapplication-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
     region: ap-northeast-2
     wait-until-deployed: true
 
