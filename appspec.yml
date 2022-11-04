@@ -1,0 +1,6 @@
+version: 0.0
+os: linux
+files:
+  - source: / # 루트 경로(/)를 지정하여 CodeDeploy에서 전달하는 전체 파일을
+    destination: /home/ec2-user/app/step2/zip/. # 이 위치로 받음
+    overwrite: yes # 기존 파일 덮어씀
