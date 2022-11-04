@@ -19,7 +19,7 @@ script: "./gradlew clean build" # 3.
 
 before_deploy:
   - zip -r awsApplication *  # 프로젝트 위치에 있는 모든 파일 압축
-  - mkdir -p deploy //(3)
+  - mkdir -p deploy
   - mv awsApplication.zip deploy/awsApplication.zip
 
 deploy:
