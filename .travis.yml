@@ -3,7 +3,7 @@ before_install:
 
 language: java
 jdk:
-  - corretto8
+  - openjdk8
 
 branches: # 1.
   only:
