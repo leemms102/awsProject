@@ -3,7 +3,7 @@ before_install:
 
 language: java
 jdk:
-  - openjdk8
+  - openjdk11
 
 branches: # 1.
   only:
@@ -44,7 +44,7 @@ deploy:
     application: awsApplication # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
     deployment_group: awsapplication-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
     region: ap-northeast-2
-  #  wait-until-deployed: true
+    wait-until-deployed: true
 
 # CI 실행 완료 시 메일 알람
 notifications: # 4.
