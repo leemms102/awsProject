@@ -9,6 +9,9 @@ group = 'com.example'
 version = '1.0.1-SNAPSHOT'
 sourceCompatibility= '8'
 
+jar {
+    enabled=false
+}
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
